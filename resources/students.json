@@ -2,12 +2,12 @@
 
 {
   "data": {
-    "uni": "dff9",
-    "first_name": "Donald",
-    "last_name": "Ferguson",
-    "school": "SEAS"
+    "uni": "tl3196",
+    "first_name": "Tianshu",
+    "last_name": "Liu",
+    "school": "MSPH"
   },
   "links": [
-    {"rel": "school", "href": "/api/schools/SEAS"}
+    {"rel": "school", "href": "/api/schools/MSPH"}
   ]
 }
