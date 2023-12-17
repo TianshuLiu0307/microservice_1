@@ -14,17 +14,17 @@ mysql_client = MysqlClient(config.DB_HOST, config.DB_USERNAME,
 body_metrics_dao = BodyMetricsDAO(mysql_client)
 
 
-@app.route('/')
+@app.route('/body_metrics/')
 def hello_world():  # put application's code here
     return 'Welcome to ShapeMentor Body Metrics Microservice!'
 
 
-@app.route('/health', methods=['GET'])
+@app.route('/body_metrics/health', methods=['GET'])
 def check_health():
     return {'msg': 'server is healthy!', 'datetime': datetime.now()}
 
 
-@app.route('/users/<user_id>/body_metrics/upload_data', methods=['POST'])
+@app.route('body_metrics/users/<user_id>/upload_data', methods=['POST'])
 def upload_user_body_metrics_data(user_id: str):
     request_data = request.json
     upload_timestamp = datetime.utcnow().isoformat()
@@ -49,7 +49,7 @@ def upload_user_body_metrics_data(user_id: str):
         raise InternalError
 
 
-@app.route('/users/<user_id>/body_metrics/retrieve_data', methods=['GET'])
+@app.route('body_metrics/users/<user_id>/retrieve_data', methods=['GET'])
 def get_user_body_metrics_data(user_id: str):
     try:
         retrieved_user_data = body_metrics_dao.get_user_body_metrics_data(user_id)
