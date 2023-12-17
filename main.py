@@ -24,7 +24,7 @@ def check_health():
     return {'msg': 'server is healthy!', 'datetime': datetime.now()}
 
 
-@app.route('body_metrics/users/<user_id>/upload_data', methods=['POST'])
+@app.route('/body_metrics/users/<user_id>/upload_data', methods=['POST'])
 def upload_user_body_metrics_data(user_id: str):
     request_data = request.json
     upload_timestamp = datetime.utcnow().isoformat()
@@ -49,7 +49,7 @@ def upload_user_body_metrics_data(user_id: str):
         raise InternalError
 
 
-@app.route('body_metrics/users/<user_id>/retrieve_data', methods=['GET'])
+@app.route('/body_metrics/users/<user_id>/retrieve_data', methods=['GET'])
 def get_user_body_metrics_data(user_id: str):
     try:
         retrieved_user_data = body_metrics_dao.get_user_body_metrics_data(user_id)
