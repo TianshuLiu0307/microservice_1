@@ -4,3 +4,4 @@ run_tests:
     - apt-get update && apt-get install make
   script:
    -make test
+   
