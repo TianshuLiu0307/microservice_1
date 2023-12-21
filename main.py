@@ -82,3 +82,6 @@ def success_rsp(data) -> Response:
 
 if __name__ == '__main__':
     app.run()
+
+
+#run main
